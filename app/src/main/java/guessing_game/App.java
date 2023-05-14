@@ -11,9 +11,10 @@ public class App {
         System.out.println("Please enter a number between 1 and 10:");
         int userInt = input.nextInt();
         int numberOfAllowedGuesses = 2;
+        boolean youWin = false;
         for (int guessAttempt = 1; guessAttempt <= numberOfAllowedGuesses; guessAttempt++)
             if (userInt == 7) {
-                System.out.println("You win!");
+                youWin = true;
             } else if (userInt == 0) {
                 System.out
                         .println("You must have misunderstood the rules. Please enter a number from between 1 and 10.");
@@ -24,8 +25,10 @@ public class App {
                 } else {
                     System.out.println("You lose");
                 }
-
-                input.close();
             }
+        if (youWin) {
+            System.out.println("You win!");
+        }
+        input.close();
+        }
     }
-}
