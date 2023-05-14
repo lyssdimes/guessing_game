@@ -10,16 +10,22 @@ public class App {
         Scanner input = new Scanner(System.in);
         System.out.println("Please enter a number between 1 and 10:");
         int userInt = input.nextInt();
-        if (userInt == 7){
-            System.out.println("You win!");
-        }
-        else if (userInt == 0){
-            System.out.println("You must have misunderstood the rules. Please enter a number from between 1 and 10.");
-        }
-        else {
-            System.out.println("You lose");
-        }
+        int numberOfAllowedGuesses = 2;
+        for (int guessAttempt = 1; guessAttempt <= numberOfAllowedGuesses; guessAttempt++)
+            if (userInt == 7) {
+                System.out.println("You win!");
+            } else if (userInt == 0) {
+                System.out
+                        .println("You must have misunderstood the rules. Please enter a number from between 1 and 10.");
+            } else {
+                if (guessAttempt < numberOfAllowedGuesses) {
+                    System.out.println("Sorry, that's not the magic number. Please try one more time.");
+                    userInt = input.nextInt();
+                } else {
+                    System.out.println("You lose");
+                }
 
-        input.close();
+                input.close();
+            }
     }
 }
