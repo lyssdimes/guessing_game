@@ -16,6 +16,9 @@ public class App {
         else if (userInt == 0){
             System.out.println("You must have misunderstood the rules. Please enter a number from between 1 and 10.");
         }
+        else {
+            System.out.println("You lose");
+        }
 
         input.close();
     }
