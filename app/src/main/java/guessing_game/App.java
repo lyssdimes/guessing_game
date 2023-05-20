@@ -17,7 +17,7 @@ public class App {
                 System.out.println("Nice guess. You win!");
                 break;
             } else if (userInt == 0) {
-                System.out.println("Try again, but this time choose a number between 1 and 10.");
+                System.out.println("Instructions: Please choose a number between 1 and 10.");
                 userInt = input.nextInt();
             } else if (userInt == -1){
                 System.out.println("You have chosen to exit the game.");
@@ -25,12 +25,17 @@ public class App {
             } else {
                 if (numberOfGuesses < maxNumberOfGuesses) {
                     System.out.println("Sorry, that's not the magic number. Please try one more time.");
+                    if(userInt > 7){
+                        System.out.println("Hint. Hint. The number you guessed is too high.");
+                    }else {
+                        System.out.println("Hint. Hint. The number you guessed is too low.");
+                    }
                     userInt = input.nextInt();
                 } else {
                     System.out.println("Uh oh. You lost!");
                 }
             }
+            input.close();
         }
-        input.close();
     }
 }
