@@ -12,7 +12,7 @@ public class App {
         System.out.println("Please enter a number between 1 and 10:");
         int userInt = input.nextInt();
         int numberOfGuesses = 1;
-        int maxNumberOfGuesses = 2;
+        int maxNumberOfGuesses = 3;
         Random number = new Random();
         int min = 1;
         int max = 10;
@@ -40,7 +40,7 @@ public class App {
                     System.out.println("Uh oh. You lost!");
                 }
             }
-            input.close();
         }
+        input.close();
     }
 }
