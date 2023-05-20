@@ -9,7 +9,7 @@ import java.util.Random;
 public class App {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.println("Please enter a number between 1 and 10:");
+        System.out.println("Let's play a guessing game! Please enter a number between 1 and 10:");
         int userInt = input.nextInt();
         int numberOfGuesses = 1;
         int maxNumberOfGuesses = 3;
@@ -29,7 +29,7 @@ public class App {
                 break;
             } else {
                 if (numberOfGuesses < maxNumberOfGuesses) {
-                    System.out.println("Sorry, that's not the magic number. Please try one more time.");
+                    System.out.println("Sorry, that's not the magic number. Please try again. That was guess # " + numberOfGuesses + " of 3.");
                     if(userInt > randomlyGeneratedNumber){
                         System.out.println("Hint. Hint. The number you guessed is too high.");
                     }else {
@@ -37,7 +37,7 @@ public class App {
                     }
                     userInt = input.nextInt();
                 } else {
-                    System.out.println("Uh oh. You lost!");
+                    System.out.println("Uh oh, " + numberOfGuesses + " strikes and you're out. You lost the guessing game!");
                 }
             }
         }
