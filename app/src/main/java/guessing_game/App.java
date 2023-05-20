@@ -4,6 +4,7 @@
 package guessing_game;
 
 import java.util.Scanner;
+import java.util.Random;
 
 public class App {
     public static void main(String[] args) {
@@ -12,8 +13,12 @@ public class App {
         int userInt = input.nextInt();
         int numberOfGuesses = 1;
         int maxNumberOfGuesses = 2;
+        Random number = new Random();
+        int min = 1;
+        int max = 10;
+        int randomlyGeneratedNumber = number.nextInt(max) + min;
         for (numberOfGuesses = 1; numberOfGuesses <= maxNumberOfGuesses; numberOfGuesses++) {
-            if (userInt == 7) {
+            if (userInt == randomlyGeneratedNumber) {
                 System.out.println("Nice guess. You win!");
                 break;
             } else if (userInt == 0) {
@@ -25,7 +30,7 @@ public class App {
             } else {
                 if (numberOfGuesses < maxNumberOfGuesses) {
                     System.out.println("Sorry, that's not the magic number. Please try one more time.");
-                    if(userInt > 7){
+                    if(userInt > randomlyGeneratedNumber){
                         System.out.println("Hint. Hint. The number you guessed is too high.");
                     }else {
                         System.out.println("Hint. Hint. The number you guessed is too low.");
