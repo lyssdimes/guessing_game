@@ -10,25 +10,27 @@ public class App {
         Scanner input = new Scanner(System.in);
         System.out.println("Please enter a number between 1 and 10:");
         int userInt = input.nextInt();
-        int numberOfAllowedGuesses = 2;
-        boolean youWin = false;
-        for (int guessAttempt = 1; guessAttempt <= numberOfAllowedGuesses; guessAttempt++)
+        int numberOfGuesses = 1;
+        int maxNumberOfGuesses = 2;
+        for (numberOfGuesses = 1; numberOfGuesses <= maxNumberOfGuesses; numberOfGuesses++) {
             if (userInt == 7) {
-                youWin = true;
+                System.out.println("Nice guess. You win!");
+                break;
             } else if (userInt == 0) {
-                System.out
-                        .println("You must have misunderstood the rules. Please enter a number from between 1 and 10.");
+                System.out.println("Try again, but this time choose a number between 1 and 10.");
+                userInt = input.nextInt();
+            } else if (userInt == -1){
+                System.out.println("You have chosen to exit the game.");
+                break;
             } else {
-                if (guessAttempt < numberOfAllowedGuesses) {
+                if (numberOfGuesses < maxNumberOfGuesses) {
                     System.out.println("Sorry, that's not the magic number. Please try one more time.");
                     userInt = input.nextInt();
                 } else {
-                    System.out.println("You lose");
+                    System.out.println("Uh oh. You lost!");
                 }
             }
-        if (youWin) {
-            System.out.println("You win!");
         }
         input.close();
-        }
     }
+}
