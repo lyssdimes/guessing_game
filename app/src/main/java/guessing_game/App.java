@@ -23,6 +23,7 @@ public class App {
                 break;
             } else if (userInt == 0) {
                 System.out.println("Instructions: Please choose a number between 1 and 10.");
+                numberOfGuesses = numberOfGuesses-1;
                 userInt = input.nextInt();
             } else if (userInt == -1){
                 System.out.println("You have chosen to exit the game.");
