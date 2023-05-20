@@ -16,8 +16,8 @@ public class App {
         Random number = new Random();
         int min = 1;
         int max = 10;
-        int randomlyGeneratedNumber = number.nextInt(max) + min;
         for (numberOfGuesses = 1; numberOfGuesses <= maxNumberOfGuesses; numberOfGuesses++) {
+            int randomlyGeneratedNumber = number.nextInt(max) + min;
             if (userInt == randomlyGeneratedNumber) {
                 System.out.println("Nice guess. You win!");
                 break;
