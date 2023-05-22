@@ -16,8 +16,8 @@ public class App {
         Random number = new Random();
         int min = 1;
         int max = 10;
+        int randomlyGeneratedNumber = number.nextInt(max) + min;
         for (numberOfGuesses = 1; numberOfGuesses <= maxNumberOfGuesses; numberOfGuesses++) {
-            int randomlyGeneratedNumber = number.nextInt(max) + min;
             if (userInt == randomlyGeneratedNumber) {
                 System.out.println("Nice guess. You win!");
                 break;
@@ -30,7 +30,7 @@ public class App {
                 break;
             } else {
                 if (numberOfGuesses < maxNumberOfGuesses) {
-                    System.out.println("Sorry, that's not the magic number. Please try again. That was guess # " + numberOfGuesses + " of 3.");
+                    System.out.println("Sorry, that's not the right number. Please try again. That was guess # " + numberOfGuesses + " of 3.");
                     if(userInt > randomlyGeneratedNumber){
                         System.out.println("Hint. Hint. The number you guessed is too high.");
                     }else {
